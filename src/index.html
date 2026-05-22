@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kart App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Optional: a nicer default font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🛒</span>
+      <span class="title">Kart Dashboard</span>
+    </div>
+
+    <div class="actions">
+      <label for="userSelect" class="sr-only">Select User</label>
+      <select id="userSelect" class="select"></select>
+      <button id="refreshBtn" class="btn ghost" title="Refresh Data">↻</button>
+      <button id="logoutBtn" class="btn danger" title="Logout">Logout</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="grid">
+    <!-- Inventory -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Inventory</h2>
+        <div class="panel-tools">
+          <input type="search" id="inventorySearch" class="input" placeholder="Search item…" />
+        </div>
+      </div>
+
+      <div id="inventoryList" class="list"></div>
+      <div id="inventoryEmpty" class="empty hidden">No items yet.</div>
+
+      <div class="divider"></div>
+
+      <h3 class="subhead">Add New Item</h3>
+      <form id="addItemForm" class="form">
+        <input type="text" id="itemName" class="input" placeholder="Name" required />
+        <input type="number" id="itemPrice" class="input" placeholder="Price" min="0" step="0.01" required />
+        <input type="number" step="0.01" id="itemWeight" class="input" placeholder="Weight (gm)" min="0" required />
+        <button type="submit" class="btn">Add Item</button>
+      </form>
+    </section>
+
+    <!-- Cart -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Cart</h2>
+        <div id="cartMeta" class="muted"></div>
+      </div>
+
+      <div id="cartList" class="list"></div>
+      <div id="cartEmpty" class="empty hidden">Cart is empty.</div>
+
+      <div class="cart-footer">
+        <div id="cartTotal" class="total">Total: ₹0</div>
+        <button id="checkoutBtn" class="btn ghost" disabled>Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global loading bar -->
+  <div id="loadingBar" class="loading hidden"></div>
+
+  <!-- Toasts -->
+  <div id="toasts" class="toasts"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>

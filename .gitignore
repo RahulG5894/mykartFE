@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out-tsc/
+tmp/
+
+# Angular (when migrated)
+.angular/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test and coverage
+coverage/
+.nyc_output/
+libpeerconnection.log
+testem.log
+/karma-reports/
+
+# IDE and editors
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Cache and temp
+.cache/
+.sass-cache/
+connect.lock
+typings/
+
+# Optional: uncomment to ignore all VS Code settings
+# .vscode/
