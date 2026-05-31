@@ -4,7 +4,11 @@
   "description": "Simple Kart App with HTML, CSS, and JavaScript",
   "scripts": {
     "start": "http-server src -p 3000 -o",
-    "dev": "http-server src -p 3000 -o"
+    "dev": "http-server src -p 3000 -o",
+    "docker:build": "docker build -t mykart-fe .",
+    "docker:run": "docker run --rm -p 3000:80 --name mykart-fe mykart-fe",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down"
   },
   "devDependencies": {
     "http-server": "^14.1.1"

@@ -1,0 +1,8 @@
+services:
+  mykart-fe:
+    build: .
+    image: mykart-fe:latest
+    container_name: mykart-fe
+    ports:
+      - "3000:80"
+    restart: unless-stopped

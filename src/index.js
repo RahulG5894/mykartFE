@@ -272,7 +272,8 @@ addItemForm.addEventListener("submit", async (e) => {
   const payload = {
     name: itemName.value.trim(),
     price: parseFloat(itemPrice.value),
-    weight: parseFloat(itemWeight.value)
+    weight: parseFloat(itemWeight.value),
+    seller: currentUserId
   };
   if (!payload.name) return;
 
